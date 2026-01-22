@@ -1,46 +1,163 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Perfil do programador
-    </title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <title>icaro@portfolio:</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Ícaro Ferreira Franklin, 22 anos</h1>
-                <hr>
-                    <strong>
-                        <p>Desenvolvedor Back-End | Python | Java | SQL |Git e GitHub</p>
-                    </strong>
-                <hr>
-            <p>
-                Profissional em início de carreira em Desenvolvimento Back-End, com base em Python, Java, SQL, HTML e CSS. Experiência em controle de processos, documentação técnica e atendimento ao cliente, adquirida em ambiente hospitalar de grande porte.
-            </p>
-        </header>
-        <article>
-            <h2>Experiência Profissional</h2>
-                <hr>
-                </hr>
-            <p>
-                <strong>Hospital São Lucas Rede D'or - Telefonista (Atual)</strong>
-            </p>
-                <li>
-                    Atendimento ao cliente via telefone e WhatsApp, garantindo comunicação ágil, empática e solução eficaz de demandas.
-                </li>
-                <li>
-                    Suporte administrativo: Assumi temporariamente funções administrativas do setor em que trabalho durante períodos de ausência da gestão.
-                </li>
-                <li>
-                    Desenvolvi um guia em Word com normas internas, fluxos de atendimento e contatos prioritários, utilizando hiperlinks e índice interativo para navegação ágil. O documento otimizou a integração de novos colaboradores, melhorou a comunicação entre setores e reduziu falhas operacionais.
-                </li>
-        </article>
-        <article>
-            <h2>Quais minhas preferências?</h2>
-        </article>
-    </main>
+
+    <div class="terminal-container">
+        <div class="terminal-header">
+        <div class="terminal-header">
+        <div class="buttons">
+        <span class="btn red"></span>
+        <span class="btn yellow"></span>
+        <span class="btn green"></span>
+     </div>
+        <div class="title">icaro@portfolio: ~</div>
+    
+        <button id="theme-btn" onclick="toggleTheme()" title="Mudar Tema">☀</button>
+
+        
+        </div>
+        </div>
+
+        <div class="terminal-body">
+            
+            <div class="intro">
+                <p>Linux Mint (GNU/Linux)</p>
+                <p class="comment"># Bem-vindo ao portfólio de Ícaro Ferreira Franklin</p>
+                <p class="comment"># Desenvolvedor Backend Jr | Java (Spring) & Python (Flask)</p>
+                <br>
+            </div>
+
+            <nav class="input-line">
+                <span class="prompt">icaro@portfolio:~$</span>
+                <span class="command-options">
+                <button onclick="openSection('tutorial')">./tutorial</button> 
+                <button onclick="openSection('sobre')">./sobre</button>
+                <button onclick="openSection('projetos')">./projetos</button>
+                <button onclick="openSection('contato')">./contato</button>
+                
+                
+                <button onclick="clearTerminal()">clear</button>
+</span>
+            </nav>
+
+            <div id="output-area"></div>
+
+            <div class="input-line active">
+                <span class="prompt">icaro@portfolio:~$</span>
+                <span class="cursor">_</span>
+            </div>
+        </div>
+    </div>
+
+    <template id="tpl-sobre">
+        <div class="output-block">
+            <p class="info">> Executando cat sobre.txt...</p>
+            <div class="file-content">
+                <h2>SOBRE MIM</h2>
+                <p>Analista de Sistemas e graduando em Ciência da Computação com paixão por Backend.</p>
+                <p>Minha bagagem prévia em Mecânica Industrial me conferiu um raciocínio lógico apurado para diagnósticos e otimização de processos.</p>
+                <p>Busco uma oportunidade como Desenvolvedor Júnior onde eu possa transformar essa capacidade de aprendizado rápido e minha disponibilidade de mobilidade nacional em resultados concretos para a equipe.</p>
+                
+                <br>
+                <h3>Competências Técnicas:</h3>
+                <ul>
+                    <li><strong>Backend & Dev:</strong> Java (Spring), Python (Flask/Dados), JavaScript, XML.</li>
+                    <li><strong>Banco de Dados:</strong> SQL, PostgreSQL, SQLite.</li>
+                    <li><strong>Frontend:</strong> HTML5, CSS3.</li>
+                    <li><strong>Infraestrutura:</strong> Linux (Servidores/Cloud), Git e GitHub.</li>
+                    <li><strong>IoT & Indústria 4.0:</strong> Arduino, Programação CNC.</li>
+                </ul>
+
+                <br>
+                <h3>Formação:</h3>
+                <ul>
+                    <li>- Ciência da Computação (Bacharelado) | Uninassau (2029)</li>
+                    <li>- Análise e Desenv. de Sistemas | Estácio de Sá (2025)</li>
+                    <li>- Técnico em Mecânica Industrial | SENAI (2021)</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-projetos">
+        <div class="output-block">
+            <p class="info">> Executando ls -l ./projetos...</p>
+            <div class="file-content">
+                
+                <div class="project-item">
+                    <h3>1. MVP Games - 'Dupla Energia' (2025)</h3>
+                    <p class="role">Role: Líder Técnico</p>
+                    <p>Coordenei equipe sob pressão utilizando Scrum e Kanban. Atuei na programação da jogabilidade e colaborei na criação artística (Pixel Art e Som).</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>2. MVP VitalMen (2025)</h3>
+                    <p class="role">Role: Líder de Backend & PO</p>
+                    <p>Plataforma de autocuidado masculino. Implementei lógica de servidor com Python (Flask) e PostgreSQL. Traduzi requisitos de negócio em arquitetura de software e liderei o time ágil.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>3. Thermobag (Innova SENAI 2021)</h3>
+                    <p class="role">Role: Co-criador</p>
+                    <p>Sistema de resfriamento para mochilas de transporte alimentar. Projeto premiado em 3º lugar estadual. Envolveu desenvolvimento de produto, prototipagem e pitch de vendas.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>+ Repositórios Adicionais</h3>
+                    <p>Estes são apenas alguns destaques. Você pode explorar todos os meus códigos, estudos e forks diretamente no GitHub.</p>
+                    <br>
+                    <p>> <a href="https://github.com/icarofranklin" target="_blank">git remote show origin (Acessar GitHub)</a></p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-contato">
+        <div class="output-block">
+            <p class="info">> Executando ./contato.sh...</p>
+            <div class="file-content">
+                <p>Conecte-se comigo:</p>
+                <ul>
+                    <li>Email: <a href="mailto:icarofranklins@gmail.com">icarofranklins@gmail.com</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/icaro-franklin079" target="_blank">in/icaro-franklin079</a></li>
+                    <li>GitHub: <a href="https://github.com/icarofranklin" target="_blank">github.com/icarofranklin</a></li>
+                    <li>Tel: (79) 99171-2900</li>
+                    <li>Local: Aracaju, Sergipe</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+    <template id="tpl-tutorial">
+    <div class="output-block">
+        <p class="info">> Executando man ./portfolio...</p>
+        <div class="file-content">
+            <h2>MANUAL DO USUÁRIO v1.0</h2>
+            <p>Bem-vindo ao terminal interativo de Ícaro Ferreira Franklin.</p>
+            <br>
+            <h3>COMANDOS DISPONÍVEIS:</h3>
+            <ul>
+                <li><strong>./sobre</strong>    : Exibe resumo profissional, stack técnica e formação.</li>
+                <li><strong>./projetos</strong> : Lista os projetos (VitalMen, Dupla Energia, Thermobag).</li>
+                <li><strong>./contato</strong>  : Mostra canais de comunicação (Email, LinkedIn, GitHub).</li>
+                <li><strong>./tutorial</strong>: Exibe este manual de ajuda.</li>
+                <li><strong>clear</strong>      : Limpa a tela do terminal (apaga o histórico).</li>
+                <li><strong>Tema (☀/☾)</strong> : Use o botão no canto superior direito da janela para alternar entre:</li>
+            </ul>
+            <br>
+            <h3>DICAS:</h3>
+            <ul>
+                <li>- A interface é responsiva e funciona em celulares.</li>
+                <li>- Clique nos links coloridos para abrir páginas externas.</li>
+            </ul>
+        </div>
+    </div>
+</template>
+    <script src="script.js"></script>
 </body>
 </html>

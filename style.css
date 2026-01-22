@@ -1,0 +1,170 @@
+/* --- DEFINIÇÃO DE CORES (VARIÁVEIS) --- */
+:root {
+    /* MODO ESCURO (Padrão) */
+    --bg-color: #0c0c0c;
+    
+    /* Texto principal agora é BRANCO SUAVE para leitura fácil */
+    --text-color: #e0e0e0;            
+    
+    /* O Verde fica apenas para detalhes (links, cursor, prompt) */
+    --accent-color: #33ff00;          
+    
+    --terminal-bg: rgba(20, 20, 20, 0.95);
+    --header-bg: #2d2d2d;
+    --header-text: #999;
+    --border-color: #333;
+    
+    /* Matrix fundo */
+    --matrix-bg-fade: rgba(0, 0, 0, 0.05);
+    --matrix-text: #0F0; /* Verde Matrix no fundo continua */
+    
+    --btn-border: #33ff00;
+    --btn-hover-bg: #33ff00;
+    --btn-hover-text: #000;
+}
+
+body.light-mode {
+    /* MODO CLARO */
+    --bg-color: #f4f4f4;
+    
+    /* Texto principal PRETO */
+    --text-color: #1a1a1a;
+    
+    /* Detalhes em Azul Escuro ou Verde Escuro (escolhi verde escuro para manter identidade) */
+    --accent-color: #006600; 
+    
+    --terminal-bg: rgba(255, 255, 255, 0.95);
+    --header-bg: #ddd;
+    --header-text: #555;
+    --border-color: #bbb;
+    
+    /* Matrix fundo claro */
+    --matrix-bg-fade: rgba(255, 255, 255, 0.1);
+    --matrix-text: #ccc; /* Letras cinzas caindo no fundo branco (sutil) */
+    
+    --btn-border: #006600;
+    --btn-hover-bg: #006600;
+    --btn-hover-text: #fff;
+}
+
+/* --- ESTILOS GERAIS --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+canvas#matrix-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+}
+
+.terminal-container {
+    width: 100%; max-width: 900px; height: 80vh;
+    background-color: var(--terminal-bg);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex; flex-direction: column;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+/* HEADER - Ajustado para o botão ficar no canto */
+.terminal-header {
+    background-color: var(--header-bg);
+    padding: 10px 15px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; /* Isso separa os itens */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.buttons { display: flex; gap: 8px; width: 60px; /* Largura fixa para equilibrar */ }
+.btn { width: 12px; height: 12px; border-radius: 50%; }
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.title {
+    flex-grow: 1; text-align: center;
+    color: var(--header-text); font-size: 14px; font-weight: bold;
+}
+
+/* Botão de Tema no Canto */
+#theme-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: 18px; width: 60px; /* Mesma largura dos botões da esq para centralizar o título */
+    text-align: right;
+    color: var(--text-color);
+    transition: transform 0.2s;
+}
+#theme-btn:hover { transform: scale(1.1); }
+
+/* CORPO */
+.terminal-body {
+    flex-grow: 1; padding: 20px; overflow-y: auto;
+    font-size: 16px; line-height: 1.6; /* Aumentei um pouco o espaçamento */
+}
+
+/* Links e Detalhes usam a cor de destaque (Verde) */
+a { color: var(--accent-color); text-decoration: none; font-weight: bold; border-bottom: 1px solid transparent;}
+a:hover { border-bottom: 1px solid var(--accent-color); }
+
+.comment { color: #777; font-style: italic; } 
+.info { color: var(--accent-color); font-weight: bold; margin-bottom: 10px; }
+
+h2, h3 { 
+    margin-top: 20px; margin-bottom: 10px; 
+    text-transform: uppercase; 
+    border-bottom: 1px dashed var(--border-color); 
+    display: inline-block;
+    color: var(--text-color);
+}
+
+ul { list-style: none; padding-left: 15px; }
+li { margin-bottom: 5px; }
+
+/* Botões de Comando */
+.command-options button {
+    background: transparent;
+    border: 1px solid var(--btn-border);
+    color: var(--accent-color); /* Texto do botão segue o destaque */
+    font-family: inherit; font-weight: bold;
+    padding: 5px 12px; margin-right: 10px; margin-bottom: 8px;
+    cursor: pointer; transition: all 0.2s; border-radius: 4px;
+}
+.command-options button:hover {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+}
+
+.prompt { color: var(--accent-color); margin-right: 10px; font-weight: bold; }
+
+/* Cursor */
+.cursor { animation: blink 1s infinite; font-weight: bold; color: var(--accent-color); }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Output Area */
+.output-block { margin-bottom: 30px; animation: fadeIn 0.3s ease-in-out; }
+.file-content { border-left: 2px solid var(--border-color); padding-left: 20px; }
+.project-item { margin-bottom: 25px; }
+.project-item .role { color: #888; font-style: italic; font-size: 0.9em; margin-bottom: 5px; display: block;}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .terminal-container { height: 100vh; width: 100vw; border-radius: 0; }
+    .command-options button { display: block; width: 100%; margin-bottom: 10px; text-align: left; }
+    .title { display: none; } /* Esconde titulo no mobile para caber os botões */
+    .buttons { width: auto; }
+    #theme-btn { width: auto; }
+}
