@@ -1,0 +1,214 @@
+/* Reset básico para garantir que fique igual em todos os navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff; /* Fundo branco puro */
+    color: #1a1a1a; /* Cinza bem escuro para texto (melhor que preto absoluto) */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita rolagem lateral */
+}
+
+/* Container centralizado */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* --- HERO (Topo) --- */
+.hero {
+    height: 100vh; /* Ocupa a tela inteira */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Deixa a foto redonda */
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra leve */
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Indicador de rolagem animado */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 0; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    font-size: 0.9rem;
+    color: #999;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* --- SEÇÕES --- */
+section {
+    padding: 80px 0;
+    border-bottom: 1px solid #f0f0f0; /* Linha sutil separando seções */
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #444;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid de Skills */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Botões */
+.links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* --- ANIMAÇÃO DE SCROLL --- */
+/* Estado inicial (invisível) */
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Deslocado para baixo */
+    transition: all 0.8s ease-out; /* Transição suave */
+}
+
+/* Estado final (visível) - será adicionado pelo JS */
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ESTILOS DOS PROJETOS --- */
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os projetos */
+    max-width: 700px;
+    margin: 0 auto; /* Centraliza o bloco na tela */
+}
+
+.project-item {
+    background-color: #fafafa; /* Cinza bem clarinho para destacar do fundo branco */
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left; /* Texto alinhado à esquerda facilita a leitura de parágrafos */
+    border: 1px solid #eeeeee;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-3px); /* Leve subida ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.project-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+}
+
+.project-item .role {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-item p {
+    font-size: 1rem;
+    color: #444;
+    margin: 0;
+}
+
+/* Estilo especial para o último item (Repositórios) */
+.highlight-item {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+}
+
+.highlight-item h3, 
+.highlight-item p {
+    color: #fff;
+}
