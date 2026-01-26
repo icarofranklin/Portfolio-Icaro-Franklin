@@ -70,6 +70,25 @@ h1 {
     60% {transform: translateY(-5px);}
 }
 
+/* --- Botão de Download do CV --- */
+.btn-download {
+    background-color: #1a1a1a; /* Fundo escuro para contraste */
+    color: #fff !important; /* Texto branco */
+    font-weight: 600;
+    border: 2px solid #1a1a1a;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+    padding: 12px 30px; /* Um pouco maior que os outros botões */
+}
+
+.btn-download:hover {
+    background-color: #fff;
+    color: #1a1a1a !important;
+    transform: translateY(-3px); /* Efeito de "subir" levemente */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+
 /* --- SOBRE MIM (CARDS) --- */
 .intro-text {
     max-width: 700px;
