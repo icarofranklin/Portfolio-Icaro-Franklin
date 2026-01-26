@@ -291,3 +291,61 @@ p {
 .highlight-item a { /* Garante que o link fique branco também */
     color: #fff;
 }
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+    
+    .hero {
+        height: auto;
+        padding: 100px 0 60px 0;
+    }
+
+    .profile-pic {
+        width: 160px;
+        height: 160px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        padding: 0 15px;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .scroll-indicator {
+        position: static;
+        margin-top: 40px;
+        animation: none;
+    }
+
+    .sobre-card, 
+    .projects-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-card {
+        padding: 25px;
+        gap: 15px;
+    }
+
+    .sobre-card p {
+        text-align: center; 
+        font-size: 0.95rem;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 40px;
+    }
+
+    .btn {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
