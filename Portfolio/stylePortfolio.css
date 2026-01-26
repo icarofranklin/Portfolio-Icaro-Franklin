@@ -1,4 +1,3 @@
-/* Reset básico para garantir que fique igual em todos os navegadores */
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +5,13 @@
 }
 
 body {
-    background-color: #ffffff; /* Fundo branco puro */
-    color: #1a1a1a; /* Cinza bem escuro para texto (melhor que preto absoluto) */
+    background-color: #ffffff;
+    color: #1a1a1a; 
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden; /* Evita rolagem lateral */
+    overflow-x: hidden;
 }
 
-/* Container centralizado */
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -21,9 +19,9 @@ body {
     text-align: center;
 }
 
-/* --- HERO (Topo) --- */
+/* --- HERO --- */
 .hero {
-    height: 100vh; /* Ocupa a tela inteira */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,12 +29,12 @@ body {
 }
 
 .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Deixa a foto redonda */
+    width: 220px; /* Aumentado de 150px para 220px */
+    height: 220px;
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Sombra leve */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 h1 {
@@ -52,7 +50,7 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* Indicador de rolagem animado */
+/* --- SCROLL INDICATOR --- */
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -61,7 +59,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     font-size: 0.9rem;
     color: #999;
     animation: bounce 2s infinite;
@@ -73,10 +70,75 @@ h1 {
     60% {transform: translateY(-5px);}
 }
 
-/* --- SEÇÕES --- */
+/* --- SOBRE MIM (CARDS) --- */
+.intro-text {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    text-align: center; 
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.sobre-card {
+    background: #252525;
+    padding: 40px; 
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s;
+    border: 1px solid transparent; 
+    display: flex;
+    align-items: center; 
+    gap: 25px; 
+    text-align: left; 
+}
+
+.sobre-card:hover {
+    transform: translateX(10px); 
+    background: #2a2a2a;
+    border-color: #00d2df;
+}
+
+.sobre-card i {
+    font-size: 3rem; 
+    color: #00d2df;
+    margin-bottom: 0; 
+    flex-shrink: 0; 
+}
+
+.sobre-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre-card h3 {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.sobre-card p {
+    color: #ccc;
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .sobre-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+}
+
+/* --- SEÇÕES GERAIS --- */
 section {
     padding: 80px 0;
-    border-bottom: 1px solid #f0f0f0; /* Linha sutil separando seções */
+    border-bottom: 1px solid #f0f0f0;
 }
 
 section:last-of-type {
@@ -95,7 +157,7 @@ p {
     margin: 0 auto;
 }
 
-/* Grid de Skills */
+/* --- SKILLS --- */
 .skills-grid {
     display: flex;
     justify-content: center;
@@ -112,7 +174,7 @@ p {
     font-weight: 500;
 }
 
-/* Botões */
+/* --- LINKS E FOOTER --- */
 .links {
     margin-top: 30px;
     display: flex;
@@ -141,41 +203,38 @@ p {
     color: #999;
 }
 
-/* --- ANIMAÇÃO DE SCROLL --- */
-/* Estado inicial (invisível) */
+/* --- ANIMAÇÕES --- */
 .scroll-hidden {
     opacity: 0;
-    transform: translateY(50px); /* Deslocado para baixo */
-    transition: all 0.8s ease-out; /* Transição suave */
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
 }
 
-/* Estado final (visível) - será adicionado pelo JS */
 .scroll-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* --- ESTILOS DOS PROJETOS --- */
-
+/* --- PROJETOS --- */
 .projects-container {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espaço entre os projetos */
+    gap: 20px;
     max-width: 700px;
-    margin: 0 auto; /* Centraliza o bloco na tela */
+    margin: 0 auto;
 }
 
 .project-item {
-    background-color: #fafafa; /* Cinza bem clarinho para destacar do fundo branco */
+    background-color: #fafafa;
     padding: 25px;
     border-radius: 10px;
-    text-align: left; /* Texto alinhado à esquerda facilita a leitura de parágrafos */
+    text-align: left;
     border: 1px solid #eeeeee;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-item:hover {
-    transform: translateY(-3px); /* Leve subida ao passar o mouse */
+    transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
@@ -200,15 +259,16 @@ p {
     margin: 0;
 }
 
-/* Estilo especial para o último item (Repositórios) */
+/* Destaque para Repositórios */
 .highlight-item {
-    background-color: #1a1a1a;
+    background-color: #929292;
     color: #ffffff;
     border: none;
     text-align: center;
 }
 
 .highlight-item h3, 
-.highlight-item p {
+.highlight-item p,
+.highlight-item a { /* Garante que o link fique branco também */
     color: #fff;
 }

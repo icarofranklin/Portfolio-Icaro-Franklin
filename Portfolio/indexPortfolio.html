@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ícaro Ferreira Franklin | Portfólio</title>
+    
     <link rel="stylesheet" href="stylePortfolio.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -25,22 +29,49 @@
 
     <main class="container">
         
-        <section class="info-section scroll-hidden">
+        <section id="sobre">
             <h2>Sobre Mim</h2>
-                <p>Analista de Sistemas e graduando em Ciência da Computação com paixão por Backend.<p>
-                </p> Minha bagagem prévia em Mecânica Industrial me conferiu um raciocínio lógico apurado para diagnósticos e otimização de processos.</p>
-                <p>Busco uma oportunidade como Desenvolvedor Júnior onde eu possa aprender e me desenvolver como profissional na área de desenvolvimento.</p>
+            <p class="intro-text">Desenvolvedor em formação apaixonado por transformar lógica em soluções eficientes.</p>
+            
+            <div class="sobre-grid">
+
+                <div class="sobre-card">
+                    <i class="fas fa-code"></i> 
+                    <div>
+                        <h3>Objetivo</h3>
+                        <p>Busco atuar como Desenvolvedor, colaborando em projetos escaláveis e evoluindo tecnicamente e profissionalmente.</p>
+                    </div>
+                </div>
+
+                <div class="sobre-card">
+                    <i class="fas fa-cogs"></i> 
+                    <div>
+                        <h3>Background</h3>
+                        <p>Minha bagagem em Mecânica Industrial me deu um raciocínio analítico para diagnósticos e otimização de processos e bugs.</p>
+                    </div>
+                </div>
+
+                <div class="sobre-card">
+                    <i class="fas fa-gamepad"></i> 
+                    <div>
+                        <h3>Hobbies</h3>
+                        <p>Entusiasta de desenvolvimento de jogos (gamedev) e aficionado por leitura. Sou comunicativo, colaborativo e adoro compartilhar conhecimentos.</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <section class="info-section scroll-hidden">
-            <h2>O que eu faço</h2>
+            <h2>Habilidades Técnicas</h2>
             <div class="skills-grid">
                 <div class="skill-item">Java & Spring</div>
                 <div class="skill-item">Python & Flask</div>
+                <div class="skill-item">JavaScript & Node.js</div>
                 <div class="skill-item">Git & GitHub</div>
                 <div class="skill-item">SQL, PostgreSQL & SQLite</div>
-                <div class="skill-item">Linux Mint/Shell</div>
-                <div class="skill-item">Godot (Hobby)</div>
+                <div class="skill-item">Linux</div>
+                <div class="skill-item">Godot e GameMaker (Hobby)</div>
             </div>
         </section>
 
@@ -50,14 +81,19 @@
                 
                 <div class="project-item">
                     <h3>1. MVP Games - 'Dupla Energia' (2025)</h3>
-                    <p class="role">Role: Líder Técnico</p>
-                    <p>Coordenei equipe sob pressão utilizando Scrum e Kanban. Atuei na programação da jogabilidade e colaborei na criação artística (Pixel Art e Som).</p>
+                    <p class="role">Role: Líder Técnico e Scrum Master</p>
+                    <p>Coordenei equipe utilizando Scrum e Kanban. Atuei na programação da jogabilidade e colaborei na criação artística (Pixel Art e Som).</p>
                 </div>
 
                 <div class="project-item">
                     <h3>2. MVP VitalMen (2025)</h3>
-                    <p class="role">Role: Líder de Backend & PO</p>
+                    <p class="role">Role: Líder Técnico, Product Owner e Programador Backend</p>
                     <p>Plataforma de autocuidado masculino. Implementei lógica de servidor com Python (Flask) e PostgreSQL. Traduzi requisitos de negócio em arquitetura de software e liderei o time ágil.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="https://github.com/VitalMen-MVP" target="_blank" style="color: #00d2df; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+                            <i class="fab fa-github"></i> Ver Código
+                        </a>
+                    </div>
                 </div>
 
                 <div class="project-item">
@@ -81,7 +117,6 @@
             <div class="links">
                 <a href="https://www.linkedin.com/in/icaro-franklin079/" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://github.com/icarofranklin" class="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
-                
                 <a href="mailto:icarofranklins@gmail.com" class="btn">Email</a>
             </div>
         </section>
