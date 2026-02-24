@@ -1,63 +1,24 @@
-🖥️ Portfólio Terminal Style
-Bem-vindo ao meu portfólio pessoal interativo. Este projeto simula um ambiente de terminal Linux (CLI) rodando diretamente no navegador, desenvolvido com HTML5, CSS3 e JavaScript puro (Vanilla JS).
+# Portfólio Pessoal | Ícaro Ferreira Franklin 🚀
 
-🚀 Funcionalidades
-Interface de Terminal: Simulação de input/output de comandos.
+Este é o repositório do meu portfólio pessoal, construído para apresentar minha trajetória, habilidades técnicas e os projetos que desenvolvi. Este foi o meu primeiro projeto prático de 2026, focado em criar uma vitrine limpa, responsiva e de alta performance.
 
-Navegação Semântica: Comandos como ./sobre e ./projetos carregam conteúdo dinamicamente.
+🌐 **Acesse o portfólio online:** [portfolio-icaro-franklin.netlify.app](https://portfolio-icaro-franklin.netlify.app)
 
-Efeito Matrix: Um canvas animado ao fundo gerando uma chuva de códigos binários e hexadecimais.
+---
 
-Responsividade: O layout se adapta a desktops e dispositivos móveis.
+## 🛠️ Tecnologias Utilizadas
 
-Estrutura Limpa: Código organizado sem dependência de frameworks externos.
+Optei por construir este portfólio "do zero" utilizando tecnologias web fundamentais para garantir controle total sobre a interface e a performance:
 
-🕹️ Como Usar (Para Visitantes)
-A interface foi desenhada para ser intuitiva, mesmo simulando um ambiente de linha de comando:
+* **HTML5:** Estruturação semântica e acessível.
+* **CSS3:** Estilização customizada, Flexbox/Grid e responsividade (Mobile First).
+* **JavaScript (Vanilla):** Lógica para rolagem suave (Smooth Scroll) e interatividade.
+* **FontAwesome:** Biblioteca para a iconografia.
+* **Netlify:** Hospedagem e CI/CD.
 
-Menu de Comandos: No centro da tela, você verá botões que simulam comandos do terminal:
+## ✨ Funcionalidades
 
-./sobre: Executa um script que exibe meu resumo profissional e stack técnica.
-
-./projetos: Lista meus projetos recentes (como o VitalMen e Dupla Energia).
-
-./contato: Exibe meus canais de comunicação (Email, LinkedIn, GitHub).
-
-clear: Limpa o histórico do terminal, deixando a tela vazia novamente.
-
-Interação: Ao clicar em um comando, o sistema processa a requisição e "imprime" a resposta na tela, rolando automaticamente para a linha mais recente.
-
-🛠️ Guia de Manutenção (Para Desenvolvedores)
-Se você quiser clonar e editar este portfólio, aqui está como a estrutura funciona:
-
-1. Adicionar/Editar Conteúdo (index.html)
-O conteúdo não fica solto no HTML, ele está encapsulado em tags <template>. Isso impede que o texto apareça antes de ser solicitado.
-
-Para mudar o texto "Sobre", edite o conteúdo dentro de <template id="tpl-sobre">.
-
-Para adicionar um novo projeto, duplique a div com a classe project-item dentro de <template id="tpl-projetos">.
-
-2. Personalizar o Matrix (script.js)
-Você pode alterar os caracteres que caem na chuva de código editando a variável chars:
-
-JavaScript
-// Linha 48 do script.js
-const chars = '01YOU2CAN3CHANGE4THIS5TEXT';
-3. Alterar Cores (style.css)
-O tema usa um verde neon clássico. Para mudar a cor principal, busque por #33ff00 e substitua pela cor hexadecimal de sua preferência (ex: #00d2ff para um tema Cyberpunk Azul).
-
-📦 Como Rodar Localmente
-Clone este repositório:
-
-Bash
-git clone https://github.com/icarofranklin/portfolio.git
-Entre na pasta:
-
-Bash
-cd portfolio
-Abra o arquivo index.html em seu navegador preferido.
-
-📄 Licença
-Este projeto está sob a licença MIT. Sinta-se à vontade para usar o código como base para seu próprio portfólio!
-
-Desenvolvido por Ícaro Ferreira Franklin
+* **Design Responsivo:** Layout que se adapta perfeitamente a dispositivos móveis, tablets e desktops.
+* **Apresentação de Projetos:** Seção dedicada aos meus principais trabalhos, como o *MVP VitalMen* e o jogo *Dupla Energia*.
+* **Download de CV:** Botão de acesso rápido para recrutadores baixarem meu currículo atualizado em PDF.
+* **Navegação Suave:** Âncoras interativas que deslizam suavemente entre as seções da página.
