@@ -1,25 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Seleciona todos os elementos que queremos animar
+
+    /*1. ANIMAÇÃO DE SCROLL*/
     const elementsToAnimate = document.querySelectorAll('.scroll-hidden');
 
-    // Cria o observador
-    // O IntersectionObserver é uma API moderna do navegador que detecta
-    // quando um elemento entra na tela. É muito mais leve que usar eventos de 'scroll'.
-    const myObserver = new IntersectionObserver((entries) => {
+    const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            // Se o elemento estiver visível na tela
             if (entry.isIntersecting) {
-                // Adiciona a classe que faz ele aparecer
-                entry.target.classList.add('scroll-visible');
+                entry.target.classList.add('scroll-visible');                
             }
         });
     }, {
         threshold: 0.1 // Dispara quando 10% do elemento estiver visível
     });
 
-    // Manda o observador vigiar cada elemento da nossa lista
     elementsToAnimate.forEach((element) => {
-        myObserver.observe(element);
+        scrollObserver.observe(element);
     });
+
+
+    /*2. ALTERNADOR DE TEMA (Dark/Light Mode)*/
+    const themeCheckbox = document.getElementById('checkbox-theme');
+    
+    if (themeCheckbox) {
+        const currentTheme = localStorage.getItem('theme');
+
+        // Se o usuário preferir dark mode, liga o botão e aplica a classe
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeCheckbox.checked = true; // Desliza a bolinha para a direita
+        }
+
+        // Quando o botão for clicado (mudar de estado)
+        themeCheckbox.addEventListener('change', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            // Salva a escolha baseada na posição do botão
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
 });
